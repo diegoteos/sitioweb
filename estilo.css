@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2c3e50;
+}
+
+#contenedor {
+    width: auto;
+    height: 200px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedor > div {
+    display: flex;
+}
+
+span#valor {
+    color: white;
+    font-size: 1.3em;
+    padding: 9px 14px;
+    background-color: #2980b9;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+button#copiador {
+    background-color: #d35400;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    display: inline-block;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+button#copiador:hover {
+    background-color: #e67e22;
+}
+
+button#copiador:active {
+    transform: scale(1.06);
+    box-shadow: 5px 0px 10px black;
+}
+
+button#copiador:focus {
+    outline: none;
+} 
+
+/* Quita los colores del texto seleccionado */
+#valor::selection {
+    background-color: rgba(0,0,0,0);
+    text-shadow: none;
+    background: none;
+}
+
+#valor::-moz-selection {
+    background-color: rgba(0,0,0,0);
+    text-shadow: none;
+    background: none;
+}
