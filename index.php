@@ -1,11 +1,21 @@
 <?php
 if (empty($_POST)) {
 }
-if (!empty($_POST['a']) && !empty($_POST['b'])) {
+if (!empty($_POST['a']) && !empty($_POST['b']) && !empty($_POST['aa']) && !empty($_POST['bb'])) {
     $a = $_POST['a'];
     $b = $_POST['b'];
+    $aa = $_POST['aa'];
+    $bb = $_POST['bb'];
     $primera = md5($a);
+    $primeraa = md5($aa);
     $segunda = md5($b);
+    $segundab = md5($bb);
+    if ($primera === $primeraa && $segunda === $segundab) {
+        echo "Procesando...";
+    } elseif ($primera !== $primeraa || $segunda !== $segundab) {
+        echo "las dos palabras son iguales";
+        echo '<script>alert("Las palabras no son iguales");</script>';
+    }
 }
 
 
@@ -28,42 +38,40 @@ if (!empty($_POST['a']) && !empty($_POST['b'])) {
         <center>
             <form action="index.php" method="post">
                 <h2>
-                    <FONT COLOR="white"> Ingrese el primera palabra: </FONT>
+                    <FONT COLOR="white"> Ingrese la primera palabra: </FONT>
                 </h2><br>
-                <input type="txt" name="a" id=""><br><br>
+                <input type="txt" name="a" id="" required><br><br>
+                <h2>
+                    <FONT COLOR="white"> Confirme la primera palabra: </FONT>
+                </h2><br>
+                <input type="txt" name="aa" id="" required><br><br>
                 <h2>
                     <FONT COLOR="white">Ingrese el segunda palabra: </FONT>
                 </h2><br>
-                <input type="txt" name="b" id=""><br><br>
-                <button type="submit">Enviar y generar contraseña segura</button>
+                <input type="txt" name="b" id="" required><br><br>
+                <h2>
+                    <FONT COLOR="white">Confirme la segunda palabra: </FONT>
+                </h2><br>
+                <input type="txt" name="bb" id="" required><br><br>
+                <button type="submit" class="btn btn-success">Enviar y generar contraseña segura</button>
                 <br><br>
             </form>
-            <?php /*
-            if (true === (isset($resultado))) {
-                echo "el resultado es $resultado";
-            } */
-            ?>
+        </center>
 
 
             <?php if (true === (isset($primera)) && true === (isset($segunda))) { ?>
                 <div id="contenedor">
                     <div>
                         <span id="valor">
-                            <?php echo $primera; '<br>';
-                            echo $segunda;
-                            
+                            <?php $contraseña = md5($primera . $segunda); echo $contraseña;
                             ?>
                         </span>
                         <button id='copiador'>Copiar</button>
-
                     <?php }
                     ?>
-
-
                     </div>
                 </div>
 
-        </center>
     </div>
     <script src="js.js"></script>
 </body>
