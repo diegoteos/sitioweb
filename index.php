@@ -1,5 +1,6 @@
 <?php
 if (empty($_POST)) {
+    echo strrev("Hola mundo cruel");
 }
 if (!empty($_POST['a']) && !empty($_POST['b']) && !empty($_POST['aa']) && !empty($_POST['bb'])) {
     $a = $_POST['a'];
