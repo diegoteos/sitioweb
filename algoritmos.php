@@ -38,10 +38,10 @@ if (!empty($_POST['primera']) && !empty($_POST['segunda'])) {
     $segunda = $_POST['segunda'];
 
     // ciframos los datos recibidos por un pasword por defecto con un costo de cifrado de 10 veces
-    $prima = password_hash($primera, PASSWORD_DEFAULT, ['cost' => 10]);
-    $segun = password_hash($segunda, PASSWORD_DEFAULT, ['cost' => 10]);
+    $prima = password_hash($primera, PASSWORD_DEFAULT, ['cost' => 8]);
+    $segun = password_hash($segunda, PASSWORD_DEFAULT, ['cost' => 8]);
 
-    echo $prima . '<br/><br/><br/>';
+    echo '<br/><br/><br/>';
     echo $prima . '<br/><br/><br/>';
     echo $segun . '<br/><br/><br/>';
 
