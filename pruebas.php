@@ -16,6 +16,8 @@ echo "El string revertido quedo de la siguiente manera: $revertir <br><br />";
 // REMPLAZO de palabras dentro de un string
 echo str_replace("diego", "Diego", $variable) . '<br><br />';
 
-echo "hola";
+// CONTEO de elementos dentro de un array
+$frutas = array('bananos', 'peras', 'uvas', 'manzanas');
+echo count($frutas);
 
 ?>
